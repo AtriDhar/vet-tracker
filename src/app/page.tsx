@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import { redirect } from "next/navigation";
 import { getSessionUser } from "@/lib/auth";
 
@@ -8,6 +9,17 @@ export default async function Landing() {
 
   return (
     <main className="flex-1">
+      {/* Microsoft Clarity tracking */}
+      <Script id="microsoft-clarity" strategy="afterInteractive">
+        {`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "zi17a36xcwz");
+        `}
+      </Script>
+      
       <div className="mx-auto max-w-5xl px-4 py-16">
         <div className="flex items-center gap-2 font-display text-xl font-bold text-teal-800">
           <span className="text-2xl">🐾</span> VetTracker
