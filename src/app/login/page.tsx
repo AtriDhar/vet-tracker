@@ -38,11 +38,28 @@ function LoginForm() {
 
       <form onSubmit={submit} className="mt-6 space-y-4">
         <Field label="Email">
-          <input className={inputCls} type="email" value={email} onChange={(e) => setEmail(e.target.value)} required autoFocus />
-        </Field>
+  <input
+    id="email"
+    name="email"
+    className={inputCls}
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+    autoFocus
+  />
+</Field>
         <Field label="Password">
-          <input className={inputCls} type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </Field>
+  <input
+    id="password"
+    name="password"
+    className={inputCls}
+    type="password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+  />
+</Field>
         {error && <p className="text-sm text-rose-600">{error}</p>}
         <Button type="submit" disabled={busy} className="w-full">
           {busy ? "Signing in…" : "Sign in"}
